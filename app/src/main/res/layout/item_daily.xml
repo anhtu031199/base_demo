@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemUi"
+            type="com.tuna.nothingapp.data.local.model.DailyItemUI" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        onSingleClick="@{() -> itemUi.onItemClick()}"
+        android:layout_width="match_parent"
+        android:layout_marginVertical="@dimen/dimen_5dp"
+        android:layout_height="120dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.8"
+            android:scaleType="fitXY"
+            android:tint="@color/primary_reverse_50"
+            android:tintMode="multiply"
+            android:src="@drawable/bg_location" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_temp_daily_item"
+            style="@style/style_text_bold_64sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20dp"
+            android:layout_marginTop="@dimen/dimen_12dp"
+            android:includeFontPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            textTemperature="@{itemUi.temp}"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="33°" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name_daily_item"
+            style="@style/style_text_semibold_18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:includeFontPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            textDate="@{itemUi.dt}"
+            tools:text="Mon, 1 Jan" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_minmax_daily_item"
+            style="@style/style_text_semibold_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20dp"
+            android:includeFontPadding="false"
+            android:layout_marginBottom="@dimen/dimen_5dp"
+            android:textColor="@color/primary_90"
+            android:alpha="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_name_daily_item"
+            android:text="@{`H:`+(itemUi.maxTemp)+`°  L:`+(itemUi.minTemp)+`°`}"
+            tools:text="H:69°  L:-10°" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_description_daily_item"
+            style="@style/style_text_semibold_28sp"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:includeFontPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/img_main_daily_item"
+            app:layout_constraintStart_toStartOf="@id/img_main_daily_item"
+            android:text="@{itemUi.main}"
+            tools:text="Nắng dại" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            loadImg="@{itemUi.icon}"
+            android:id="@+id/img_main_daily_item"
+            android:layout_width="@dimen/dimen_80dp"
+            android:layout_height="@dimen/dimen_80dp"
+            android:layout_marginEnd="@dimen/dimen_20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_01d" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

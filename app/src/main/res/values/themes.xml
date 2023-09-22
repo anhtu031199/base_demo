@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Ctech_demo" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="fontFamily">@font/linote_regular</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/transparent</item>
+        <item name="colorOnPrimary">@color/transparent</item>
+        <item name="android:textColorPrimary">@color/primary_reverse</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/transparent</item>
+        <item name="colorSecondaryVariant">@color/transparent</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogCustom</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/transparent</item>
+    </style>
+    
+    <style name="DialogBottomSheetDialogTransparent" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimAmount">0.0</item>
+        <item name="android:windowFrame">@null</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="android:Theme.Material.Dialog.Alert">
+        <item name="colorPrimary">@color/primary_reverse</item>
+    </style>
+</resources>

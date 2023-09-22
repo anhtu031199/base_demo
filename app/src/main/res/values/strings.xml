@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Ctech_demo</string>
+    <string name="degree">°</string>
+    <string name="dot">•</string>
+    <string name="feels_like">Feels like&#160;</string>
+    <string name="now">Now</string>
+    <string name="hourly">Hourly</string>
+    <string name="daily">Daily</string>
+    <string name="aqi">AQI</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="error">Error</string>
+    <string name="loading">Loading…</string>
+    <string name="weather_now">Weather now</string>
+    <string name="hourly_forecast">Next 24h forecast</string>
+    <string name="daily_forecast">Next 7 days forecast</string>
+    <string name="air_visual">Air Visual</string>
+    <string name="wind">Wind</string>
+    <string name="pressure">Pressure</string>
+    <string name="humidity">Humidity</string>
+    <string name="uv_index">UV Index</string>
+    <string name="confirm_exit">Press Back again to close</string>
+    <string name="today">Today</string>
+    <string name="next_7_days">Next 7 days ➤</string>
+    <string name="this_week">This week</string>
+    <string name="search_location">Search places</string>
+    <string name="favorite_location">Saved Locations</string>
+
+<!--    Employee-->
+    <string name="department_1">Ban Giám Đốc</string>
+    <string name="department_2">Phòng Kế toán</string>
+    <string name="department_3">Phòng Kinh doanh</string>
+    <string name="department_4">Phòng Thiết kế</string>
+    <string name="department_0">N/A</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="search">Search</string>
+    <string name="fullname">Họ tên</string>
+    <string name="birthday">Ngày sinh</string>
+    <string name="gender">Giới tính</string>
+    <string name="email">Email</string>
+    <string name="phone">Số điện thoại</string>
+    <string name="salary">Thu nhập tháng</string>
+    <string name="department">Phòng ban</string>
+    <string name="image">Ảnh thẻ</string>
+    <string name="biography">Tiểu sử</string>
+
+</resources>

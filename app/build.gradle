@@ -1,0 +1,92 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    namespace 'com.tuna.ctech'
+    compileSdk 33
+    def localProperties = new Properties()
+    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
+    defaultConfig {
+        applicationId "com.tuna.ctech"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"" + localProperties['baseUrl'] + "\"")
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+}
+
+dependencies {
+    api Deps.corektx
+    api Deps.appcompat
+    api Deps.material
+    api Deps.constraintLayout
+    //Navigation
+    api Deps.navigationfragmentktx
+    api Deps.navigationuiktx
+    //Lifecycle
+    api Deps.lifecycleLiveDataKtx
+    api Deps.lifecycleViewModelKtx
+    //
+
+    api Deps.recyclerview
+    api Deps.roomKtx
+    api Deps.roomRuntime
+    kapt Deps.roomCompiler
+    api Deps.retrofit
+    api Deps.converterGson
+    api Deps.okhttpUrlconnection
+    api Deps.coroutinesAndroid
+    api Deps.coroutinesCore
+    api Deps.glide
+    api Deps.glideTransformation
+    api Deps.timber
+    api Deps.hilt
+    kapt Deps.hiltCompiler
+    api Deps.spinkit
+    api Deps.viewPager
+    api Deps.locationServices
+    api Deps.googleServices
+    api Deps.rxpermissions
+    api Deps.rxAndroid3
+    api Deps.sweetDialog
+    api Deps.cardview
+    api Deps.swiperefreshlayout
+    api Deps.ultimateBarX
+    api Deps.easyPermission
+
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+}
